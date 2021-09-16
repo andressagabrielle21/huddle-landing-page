@@ -1,0 +1,264 @@
+@import "_default";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    //Headings
+    h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        @include device(750) {
+            font-size: 30px;
+        }
+    }
+    p {
+        font-size: 16px;
+        color: gray;
+    }
+    button {
+        background-color: $pink;
+        border-radius: 20px;
+        padding: 10px 45px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.home {
+    padding: 30px;
+    background: url(/images/bg-hero-desktop.svg) no-repeat; 
+    background-color: #edfbfe;
+    
+    align-content: center;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        img {
+            width: 250px;
+            @include device(750){
+                width: 100px;
+            }
+        }
+        button {
+            padding: 10px 65px;
+            @include device(1500) {
+                &:hover{ 
+                    opacity: .5;
+                    transition: .5s;
+                    background-color: #ffffff;
+                    box-shadow: 0px 0px 10px 0px #949494;
+                }
+            }
+            @include device(750) {
+                padding: 10px 40px;
+                background-color: #ffffff;
+                box-shadow: 0px 0px 10px 0px #949494;
+            }
+        }
+    }
+    .grid {
+        padding: 50px 30px 0 30px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .text {
+            padding: 0 50px;
+            @include device(750){
+                padding: 50px 0;
+                text-align: center;
+            }
+            h1 {
+                padding-bottom: 30px;
+            }
+            p {
+                padding-bottom: 30px;
+            }
+            button {
+                padding: 16px 65px;
+                border-radius: 40px;
+                color: #ffffff;
+                @include device(1500){
+                    &:hover {
+                        transition: .5s;
+                        opacity: .5;
+                        box-shadow: 0px 0px 10px 0px #949494;
+                    }
+                }
+                
+                
+            }
+        }
+        .image {
+            img{
+                width: 750px;
+                @include device(750) {
+                    width: 300px;
+                }
+            }
+        }
+        @include device(750){
+            background: url(/images/bg-hero-mobile.svg) no-repeat; 
+            background-color: #edfbfe;
+            flex-direction: column;
+            width: auto;
+        }
+    }
+}
+
+.services {
+    padding: 30px;
+    margin: 20px 0;
+    @include device(750) {
+        padding: 10px;
+    }
+    .grow, .flow, .users {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 20px;
+        width: 70%;
+        box-shadow: 0px 0px 5px 0px #949494;
+        padding: 20px 60px;
+        margin: 50px auto;
+        img {
+            width: 450px;
+        }
+        @include device(750){
+            width: 90%;
+            flex-direction: column-reverse;
+            text-align: center;
+            img {
+                width: 250px;
+            }
+            .text {
+                padding: 50px 5px;
+            }
+        }
+    }
+    @include device(1500) {
+        .flow {
+            flex-direction: row-reverse;
+            img {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+.card {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(0,37,46,1) 50%); 
+    .box {
+        width: 50%;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px 0px #949494;
+        border-radius: 30px;
+        text-align: center;
+        padding: 50px;
+        margin: 0 auto;
+        h1 {
+            line-height: 40px;
+            padding-bottom: 30px;
+        }
+        button {
+            padding: 16px 70px;
+            color: #ffffff;
+            border-radius: 30px;
+            @include device(1500){
+                &:hover {
+                    transition: .5s;
+                    opacity: .5;
+                    box-shadow: 0px 0px 10px 0px #949494;
+                }
+            }
+        }
+        @include device(750) {
+            padding: 30px;
+            width: 90%;
+            top: 260%;
+            left: auto;
+            h1 {
+                font-size: 20px;
+                line-height: 30px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+.footer {
+    background-color: $very-dark-cyan;
+    padding: 30px;
+    .real-footer {
+        margin: 30px 0 0 0;
+        display: flex;
+        justify-content: space-evenly;
+        color: #ffffff;
+        @include device(1500) {
+            align-items: center;
+        }
+        @include device(750) {
+            flex-direction: column;
+            .footer01 {
+                width: auto;
+            }
+            .links1 {
+                padding-top: 30px;
+            }
+            .social {
+                padding-top: 30px;
+                text-align: center;
+            }
+        }
+        .footer01 {
+            width: 300px;
+            .location, .phone, .email {
+                padding-bottom: 20px;
+                display: flex;
+                align-items: center;
+                img {
+                    padding-right: 20px;
+                }
+            }
+        }
+        .links1, .links2 {
+            display: flex;
+            flex-direction: column;
+            a {
+                padding-bottom: 10px;
+            }
+        }
+        .social {
+            img {
+                padding: 10px;
+            }
+            @include device(1500) {
+                img:hover {
+                    cursor: pointer;
+                    border-style: solid;
+                    border-color: $pink;
+                    border-width: 1px;
+                    border-radius: 50%;
+                    transition: .5s;
+                }
+            }
+
+        }
+    }
+}
